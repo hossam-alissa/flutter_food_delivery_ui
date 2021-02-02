@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         title: Text("Food delivery"),
         actions: [
-          FlatButton(onPressed: (){}, child: Text("Cart (${currentUser.cart.length})")),
+          TextButton(onPressed: (){}, child: Text("Cart (${currentUser.cart.length})")),
         ],
       ),
     );
