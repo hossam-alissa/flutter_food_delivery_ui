@@ -7,7 +7,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,13 +14,38 @@ class _HomeScreenState extends State<HomeScreen> {
         leading: IconButton(
           icon: Icon(Icons.account_circle),
           iconSize: 30,
-          onPressed: (){
-
-          },
+          onPressed: () {},
         ),
         title: Text("Food delivery"),
         actions: [
-          TextButton(onPressed: (){}, child: Text("Cart (${currentUser.cart.length})")),
+          TextButton(
+            onPressed: () {},
+            child: Text("Cart (${currentUser.cart.length})",
+                style: TextStyle(color: Colors.white, fontSize: 20.0)),
+          ),
+        ],
+      ),
+      body: ListView(
+        children: [
+          Padding(
+            padding:  EdgeInsets.all(20.0),
+            child: TextField(
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.symmetric(vertical: 15.0),
+                  fillColor: Colors.white,
+                  filled: true,
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(40.0),
+                      borderSide: BorderSide(width: 0.8)),
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(40.0),
+                      borderSide: BorderSide(width: 0.8, color: Theme.of(context).primaryColor)),
+                  hintText: "Search Food and Restaurant" ,
+                prefixIcon: Icon(Icons.search,size: 30.0,),
+                suffixIcon: IconButton(onPressed: (){}, icon: Icon(Icons.clear,size: 30,),)
+              ),
+            ),
+          )
         ],
       ),
     );
