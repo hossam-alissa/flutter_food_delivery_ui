@@ -14,19 +14,19 @@ class RecentOrders extends StatelessWidget {
       ),
       child: Row(
         children: [
-            Row(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(15),
-                  child: Image(
-                    height: 100.0,
-                    width: 100.0,
-                    image: AssetImage(order.food.imageUrl),
-                    fit: BoxFit.cover,
-                  ),
+          Row(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: Image(
+                  height: 100.0,
+                  width: 100.0,
+                  image: AssetImage(order.food.imageUrl),
+                  fit: BoxFit.cover,
                 ),
-              ],
-            ),
+              ),
+            ],
+          ),
           Expanded(
             child: Container(
               margin: EdgeInsets.all(12.0),
@@ -36,7 +36,8 @@ class RecentOrders extends StatelessWidget {
                 children: [
                   Text(
                     order.food.name + "csvadscasdcdasaa",
-                    style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+                    style:
+                        TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
                     overflow: TextOverflow.ellipsis,
                   ),
                   SizedBox(height: 4.0),
@@ -92,8 +93,8 @@ class RecentOrders extends StatelessWidget {
         Container(
           height: 120,
           child: ListView.builder(
-            physics: BouncingScrollPhysics(),
-            padding: EdgeInsets.only(left: 10.0),
+              physics: BouncingScrollPhysics(),
+              padding: EdgeInsets.only(left: 10.0),
               scrollDirection: Axis.horizontal,
               itemCount: currentUser.orders.length,
               itemBuilder: (BuildContext context, int index) {
